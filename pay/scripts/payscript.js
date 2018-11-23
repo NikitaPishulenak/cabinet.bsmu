@@ -87,12 +87,15 @@
                         });
 
                         $("#pay").click(function(){
+                        	
+                        	console.log("Сформировать запрос");
                             $(function(){
                                 p_mas.length=0; l_mas.length=0; ex_mas.length=0; id_mas.length=0; //datLes_mas.length=0;
                                 if($("div.selected").length==0){
                                     alert(lang['selectLessons'][language]);
                                 }
                                 else{
+                                	$("#pay").attr('disabled', true);
                                     $("div.selected").each(function(){
                                         if($(this).attr('data-PL')==1){ //если это лк
                                             l_mas.push("1:"+$(this).find(".DataO").text());
@@ -117,7 +120,7 @@
                                     ex=ex_mas.join("|");
                                     idZapis=id_mas.join("|");
                                     //datLes=datLes_mas.join("|");
-                                    console.log(`l:${l} p:${p}`);
+                                    //console.log(`l:${l} p:${p}`);
                                     if(p.length!=0 || l.length!=0 || ex.length!=0){
                                         verifyDialog = $("#verifyDialog").dialog({
                                         resizable: false,
@@ -126,6 +129,7 @@
                                         buttons: [{
                                             text: lang['pay'][language],
                                             click: function () {
+                                            	console.log("нажал кнопку 1");
                                                 $.ajax({
                                                     type: 'get',
                                                     url: MainURL+'/pay/getData.php',
@@ -203,6 +207,7 @@
                                             text: lang['cancel'][language],
                                             click: function () {
                                                 verifyDialog.dialog("close");
+                                                $("#pay").removeAttr('disabled');
                                             },
                                         }],
                                         
@@ -342,7 +347,8 @@
             }, {
                 text: lang['cancel'][language],
                 click: function () {
-                    dialog_confirm_delPay.dialog("close");                          
+                    dialog_confirm_delPay.dialog("close");    
+
                 },
             }],
             
