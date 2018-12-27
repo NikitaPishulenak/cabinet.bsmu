@@ -34,7 +34,7 @@ $lang['GVP10'] = array("Количество отметок:", "Number of grades");
 $lang['GVP11'] = array("Если вы пропустили занятие по уважительной причине, обращайтесь в деканат своего факультета.", "If you missed the class for a valid reason, contact the Dean's Office.");
 $lang['GVP12'] = array("<strong><span class=\"notebull\">&bull;</span></strong> <span> - Отработанный пропуск</span>", "<strong><span class=\"notebull\">&bull;</span></strong> <span> - Made up missed class</span>");
 $lang['GVP13'] = array("<strong>Н<sub>у</sub></strong><span> - Пропуск занятия по уважительной причине</span>", "<strong>A<sub>g</sub></strong><span> - Missed class for a valid reason</span>");
-$lang['GVP14'] = array("<strong>Н<sub>б.о</sub></strong><span> - Пропуск занятия без отработки во внеучебное время</span>", "<strong>A<sub>n.m</sub></strong><span> - Missed class without further make up work</span>");
+$lang['GVP14'] = array("<strong>Н<sub>б.о</sub></strong><span> - Пропуск занятия без отработки во внеучебное время</span>", "<strong>A<sub>n.m</sub></strong><span> - Missed class without further make up work at free time</span>");
 $lang['GVP15'] = array("<strong>Н<sub>н</sub></strong><span> - Пропуск занятия по неуважительной причине</span>", "<strong>A<sub>ng</sub></strong><span> - Missed class for an inadequate reason</span>");
 $lang['GVP16'] = array("Обычная отметка", "Ordinary grade");
 $lang['GVP17'] = array("Коллоквиум / История болезни", "Colloquium / Medical history");
@@ -71,5 +71,6 @@ $lang['pay24'] = array("Ваш номер для оплаты в ЕРИП:", "Your number to pay in ER
 $lang['pay25'] = array("Номер платежа действителен 24 часа!", "The payment number is valid 24 hours!");
 $lang['pay26'] = array("Оплата пропусков", "Payment of missed classes");
 $lang['pay27'] = array("Удаление счета", "Deleting the bill");
+$lang['pay28'] = array("Внимание!<br>Оплату через ЕРИП необходимо производить в разделе \"<strong>Академическая задолженность</strong>\". Отсутствие выставленного платежа означает окончание срока действия счета (необходимо заново выписать отработку).", "Attention!<br>Payment via ERIP must be made in the \"<strong>Academic Debts</strong>\" section. Absence of payment means the terms of account have expired and it is necessary to get a new permission from the Dean's office to pay for the missed classes.");
 
 ?>

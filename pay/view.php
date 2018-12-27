@@ -115,6 +115,8 @@ function showHistory($lang){
     <html>
     <head>
         <title><?php echo $_SESSION['SesStudPay']['nameS'][$_SESSION['SLG']]; ?></title>
+        <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
         <meta charset="windows-1251">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -132,7 +134,7 @@ function showHistory($lang){
     <?php echo LevelView($lang); ?>
     <input type='hidden' id='idStudent' value='<?php echo $_SESSION['SesStudPay']['idS']; ?>'>
     <div class="Header"><H2><?php echo $_SESSION['SesStudPay']['nameS'][$_SESSION['SLG']]; ?></H2></div>
-    <?php echo"<p>".$lang['GVP5'][$_SESSION['SLG']]." <strong>".$_SESSION['SesStudPay']['gnameS']."</strong> (".$_SESSION['SesStudPay']['kursS'].$lang['GVP6'][$_SESSION['SLG']].")<br>".$_SESSION['SesStudPay']['fnameS'][$_SESSION['SLG']]."</p><hr>";
+    <?php echo"<p>".$lang['GVP5'][$_SESSION['SLG']]." <strong>".$_SESSION['SesStudPay']['gnameS']."</strong> (".$_SESSION['SesStudPay']['kursS'].$lang['GVP6'][$_SESSION['SLG']].")<br>".$_SESSION['SesStudPay']['fnameS'][$_SESSION['SLG']]."</p><hr><div class='DialogP'><div class='titleBox'><H2><a href='/pay/'>".$lang['pay4'][$_SESSION['SLG']]."</a>&nbsp;&nbsp;/&nbsp;&nbsp;".$lang['pay3'][$_SESSION['SLG']]."</H2></div></div>\n";
 
       include_once 'configMain.php';
       $result = mysqli_query($dbMain, "SELECT id, idOrder, idLessons, price, DATE_FORMAT(generateDT,'%d.%m.%Y'), DATE_FORMAT(payDT,'%d.%m.%Y'), idZapis, status FROM payments WHERE idStudent ='".$_SESSION['SesStudPay']['idS']."' AND (status=2 OR status=3) ORDER BY status ASC, generateDT DESC");
@@ -155,7 +157,7 @@ function showHistory($lang){
             echo "<div class='genPay'><div class='gen_les' title='".$lang['GVP7'][$_SESSION['SLG']]."'>".$les[$_SESSION['SLG']]."</div><div class='gen_idOrder' title='".$lang['pay6'][$_SESSION['SLG']]."'><strong>".$arrRes[1]."</strong></div><div class='gen_price' title='".$lang['pay8'][$_SESSION['SLG']]."'>".$arrRes[3]." ".$lang['pay14'][$_SESSION['SLG']]."</div><div class='gen_dt' title='".$lang['pay15'][$_SESSION['SLG']]."'>".$arrRes[4]."</div><div class='pay_dt' title='".$lang['pay16'][$_SESSION['SLG']]."'>".(($arrRes[7]==3) ? $arrRes[5] : "")."</div><div class='gen_countAbs' title='".$lang['pay17'][$_SESSION['SLG']]."'>".count($countAbs)."</div><div class='cancelPay' title='".$lang['pay18'][$_SESSION['SLG']]."'>".(($arrRes[7]==3) ? "" : "<a href='#'data-idPay=".$arrRes[0].">".$lang['pay19'][$_SESSION['SLG']]."</a>")."</div></div>";
          
         }
-        echo"<div class='clr'></div><div class='clr'></div><div class='clr'></div></div>";
+        echo"<div style='clear:both; margin-bottom:20px;'>&nbsp;</div><div class='support'>".$lang['pay28'][$_SESSION['SLG']]."</div><div style='clear:both; margin-bottom:50px;'>&nbsp;</div></div>";
 
         ?>
 
@@ -166,7 +168,7 @@ function showHistory($lang){
         </form>
       <?
       } else{
-        echo "<h2>".$lang['pay20'][$_SESSION['SLG']]."</h2>";
+        echo "<h2>".$lang['pay20'][$_SESSION['SLG']]."</h2><div style='clear:both; margin-bottom:20px;'>&nbsp;</div><div class='support'>".$lang['pay28'][$_SESSION['SLG']]."</div><div style='clear:both; margin-bottom:50px;'>&nbsp;</div>";
       } 
       ?>
 
@@ -186,6 +188,8 @@ function HeaderFooter($content,$vC='',$vS='', $lang){
     <html>
     <head>
         <title><?php echo $_SESSION['SesStudPay']['nameS'][$_SESSION['SLG']]; ?></title>
+        <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
         <meta charset="windows-1251">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -203,7 +207,9 @@ function HeaderFooter($content,$vC='',$vS='', $lang){
     <input type='hidden' id='idStudent' value='<?php echo $_SESSION['SesStudPay']['idS']; ?>'>
     <div class="Header"><H2><?php echo $_SESSION['SesStudPay']['nameS'][$_SESSION['SLG']]; ?></H2></div>
     <?php echo $content; ?>
-    <div style="clear:both; margin-bottom:100px;">&nbsp;</div>
+    <div style="clear:both; margin-bottom:20px;">&nbsp;</div>
+    <div class="support"><?php echo $lang['pay28'][$_SESSION['SLG']]; ?></div>
+    <div style="clear:both; margin-bottom:50px;">&nbsp;</div>
     
     <div>
         <form title='<?php echo $lang['pay26'][$_SESSION['SLG']]; ?>' id='verifyDialog'>

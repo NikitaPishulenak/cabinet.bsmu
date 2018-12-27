@@ -21,7 +21,7 @@ if(isset($_GET['menuactiv'])){
 function generatePay(){
    if( isset($_GET['idOrder']) && is_numeric($_GET['idOrder']) && isset($_GET['idLessons']) && is_numeric($_GET['idLessons']) && isset($_GET['idStudent']) && is_numeric($_GET['idStudent']) && isset($_GET['status']) && is_numeric($_GET['status']) && isset($_GET['price']) && is_numeric($_GET['price']) && isset($_GET['idZap'])){
       include_once 'configMain.php';
-         $res = mysqli_query($dbMain, "INSERT INTO payments (idOrder, idLessons, idStudent, status, price, generateDT, idZapis) VALUES ('".$_GET['idOrder']."', '".$_GET['idLessons']."', '".$_GET['idStudent']."', '".$_GET['status']."', '".$_GET['price']."', CURRENT_TIMESTAMP(), '".$_GET['idZap']."')");
+         $res = mysqli_query($dbMain, "INSERT INTO payments (idOrder, idLessons, idStudent, status, price, generateDT, idZapis) VALUES (".$_GET['idOrder'].", ".$_GET['idLessons'].", ".$_GET['idStudent'].", 2, '".$_GET['price']."', CURRENT_TIMESTAMP(), '".$_GET['idZap']."')");
 
          $idZapises=explode("|", $_GET['idZap']);
          foreach ($idZapises as $zap){

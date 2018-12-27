@@ -87,8 +87,7 @@
                         });
 
                         $("#pay").click(function(){
-                        	
-                        	console.log("Сформировать запрос");
+
                             $(function(){
                                 p_mas.length=0; l_mas.length=0; ex_mas.length=0; id_mas.length=0; //datLes_mas.length=0;
                                 if($("div.selected").length==0){
@@ -129,7 +128,6 @@
                                         buttons: [{
                                             text: lang['pay'][language],
                                             click: function () {
-                                            	console.log("нажал кнопку 1");
                                                 $.ajax({
                                                     type: 'get',
                                                     url: MainURL+'/pay/getData.php',
@@ -148,7 +146,7 @@
                                                         $("div.modal").remove();
                                                         idOrder=response;
                                                         //var re = /^\d[0-9]+$/;
-                                                        //console.log(response);
+                                                        console.log(response);
                                                         if (!isNaN(idOrder)) {
                                                             $.ajax({
                                                                 type: 'get',
@@ -243,7 +241,7 @@
                                                 }
                                                 else{
                                                     alert(lang['errorFrom1cSum'][language]);
-                                                    console.log(price);
+                                                    //console.log(price);
                                                 }
                                             },
                                             error: function () {

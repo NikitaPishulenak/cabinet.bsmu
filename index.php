@@ -142,6 +142,10 @@ function logn($lgn='',$msg='', $lang){
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <script src="scripts/jquery-3.2.1.min.js"></script>
+        <script src="scripts/cookie.js"></script>
+        <script src="scripts/lang.js"></script>
 <script>
 <!--
 function sbmt(){
@@ -155,6 +159,7 @@ function sbmt(){
 </script>
     </head>
 <BODY>
+<div class='Lang'><div class='ruen'>Ru</div><input type='checkbox' id='switch' /><label for='switch'></label><div class='ruen'>En</div></div>
 <div class='LogF'>
 <div class='LogForm'><h1><?php echo $lang['title'][$_SESSION['SLG']]; ?></h1>
 <div class='LogFormMsg'><?php echo $msg; ?></div>

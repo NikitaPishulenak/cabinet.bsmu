@@ -61,7 +61,7 @@ A:focus{outline:none; }
 .support {margin-left:20px; font-size:12px; color:#808080;}
 .support strong {color: #000;}
 
-/* вЂќВ®Р°В¬В  Р‡В®РЃР±Р„В  -------------------------------------------------------------------- */
+/* ”®а¬  Ї®ЁбЄ  -------------------------------------------------------------------- */
 
 .SearchForm {margin-top:20px; margin-bottom:20px; font-size:12px; font-style:italic;}
 .SearchText {}
@@ -134,7 +134,7 @@ div.number_theme{ padding-left: 5px; position: absolute; top: 15px; margin-left:
 .export img { border:0; vertical-align: middle; margin-right:10px;}
 .sh{ box-shadow: inset 0 0 10px 5px rgba(0,0,0,0.2); transition: 1.0s;}
 
-/*Р”РµРєР°РЅР°С‚*/
+/*Деканат*/
 .available_grade {opacity: 1; cursor: pointer;}
 .selected{border: solid #ff0000 3px;}
 .menuTools{color:#000; margin-bottom:20px; display:table;}
@@ -152,7 +152,7 @@ div.number_theme{ padding-left: 5px; position: absolute; top: 15px; margin-left:
 .paid .genPay:last-child {border-bottom: none;}
 .headerPayList div{font-size: .8em;}
 .paid{color:#808080; }
-/* РђРІС‚РѕСЂРёР·Р°С†РёСЏ ------------------------------------------------------------------------------------------*/
+/* Авторизация ------------------------------------------------------------------------------------------*/
 
 .LogF {margin-top:10%; width:100%;}
 .LogForm {margin:0 auto; width:290px;}
@@ -160,7 +160,7 @@ div.number_theme{ padding-left: 5px; position: absolute; top: 15px; margin-left:
 .Login {font-style:italic;}
 .Password {font-style:italic;margin-top:5px;}
 
-/*РџРµСЂРµРєР»СЋС‡Р°С‚РµР»СЊ СЏР·С‹РєР°*/
+/*Переключатель языка*/
 .Lang { position:absolute; right:55px; padding:2px; width:250px; float:right; background-color:#fff; clear:both; }
 .Lang .ruen { float:left; padding-left:5px; padding-right:5px;  padding-top:2px; color: #004c99;}
 input[type=checkbox]#switch { height: 0; width: 0; visibility: hidden;}
@@ -182,7 +182,7 @@ input:checked + label:after { left: calc(100% - 3px); transform: translateX(-100
 }
 
 @media only screen and (min-width: 699px) and (max-width: 1150px){
-        /*Р’Р°С€Рё РїР»Р°С‚РµР¶Рё*/
+        /*Ваши платежи*/
     .gen_les{width: 200px; font-size: .72em;}
     .gen_idOrder, .gen_dt, .pay_dt {width: 85px;}
     .gen_idOrder, .gen_countAbs, .gen_price {font-size: 0.8em;}
@@ -231,7 +231,7 @@ input:checked + label:after { left: calc(100% - 3px); transform: translateX(-100
     .SearchWords {width:70%;}
     .title{font-size: 10px;}
 
-     /*Р’Р°С€Рё РїР»Р°С‚РµР¶Рё*/
+     /*Ваши платежи*/
     .gen_pay{width: 100%;}
     .gen_les, .gen_idOrder, .gen_price, .gen_dt, .pay_dt, .gen_countAbs, .cancelPay{width: 100%; text-align: center; margin: 0;}
     .cancelPay{margin-bottom: 15px;}

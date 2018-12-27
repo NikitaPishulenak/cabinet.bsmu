@@ -144,7 +144,7 @@ lang = {
     "errorSendTo1c": ["Не удалось передать в 1с.", "Failed to send in 1c."],
     "errorSelect": ["Ошибка выбора!", "Selection error!"],
     "infoAboutPay": ["Внимание! \nОплату через ЕРИП необходимо производить в разделе «Академическая задолженность». Отсутствие выставленного платежа означает окончание срока действия счета (необходимо заново выписать отработку).",
-                     "Внимание! \nОплату через ЕРИП необходимо производить в разделе «Академическая задолженность». Отсутствие выставленного платежа означает окончание срока действия счета (необходимо заново выписать отработку)."],
+                     "Attention! \nPayment via ЕРИП must be made in the “Academic Debts” section. Absence of payment means the terms of account have expired and it is necessary to get a new permission from the Dean’s office to pay for the missed classes."],
 
     
     "testing": ["Данная функция еще тестируется!", "This function is still being tested!"],
