@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+$(document).ready(function () {
     var language = $.cookie('StudLang');
     ((language!=0) && (language!=1)) ? language=0 : "";
 
@@ -94,7 +94,7 @@
                                     alert(lang['selectLessons'][language]);
                                 }
                                 else{
-                                	$("#pay").attr('disabled', true);
+                                    $("#pay").attr('disabled', true);
                                     $("div.selected").each(function(){
                                         if($(this).attr('data-PL')==1){ //если это лк
                                             l_mas.push("1:"+$(this).find(".DataO").text());
@@ -162,6 +162,7 @@
                                                                     'idLessons': idSub
                                                                 },
                                                                 success: function (response) {
+                                                                    console.log(response);
                                                                     if(response=="added"){
                                                                         var payIdDialog, payIdForm;
                                                                         payIdDialog = $("#payIdDialog").dialog({
@@ -234,6 +235,25 @@
                                             },
                                             success: function (response) {
                                                 price=response;
+
+                                                //отправка логов
+                                                $.ajax({
+                                                    type: 'get',
+                                                    url: 'log.php',
+                                                    data: {
+                                                        'menuactiv': "generatePay",
+                                                        'idStudent': idStudent,
+                                                        'status': "2",
+                                                        'price': price.replace(/[\,]/g,'.')
+                                                    },
+                                                    success: function (response) {
+                                                        console.log("вставил в логи!");
+                                                    },
+                                                    error: function () {
+                                                        console.log("Произошла ошибка при сохранении логов!");
+                                                    }
+                                                }); 
+
                                                 $("div.modal").remove();
                                                 if (!isNaN(price.replace(/[\,]/g,'.'))) {
                                                     verifyDialog.dialog("open");
@@ -305,6 +325,25 @@
             buttons: [{
                 text: lang['Delete'][language],
                 click: function () {
+
+                    //отправка логов удаление
+                    $.ajax({
+                        type: 'get',
+                        url: 'log.php',
+                        data: {
+                            'menuactiv':"deletePayToLog",
+                            'status':"5",
+                            'idOrder': billText
+                        },
+
+                        success: function () {
+                           console.log("Логи удаление вставлены!");    
+                        },
+                        error: function () {
+                            console.log("Произошла ошибка при вставке логов удаления!");    
+                        }
+                    });    
+
                     $.ajax({
                         type: 'get',
                         url: MainURL+'/pay/getData.php',
